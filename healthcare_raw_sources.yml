@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: RAW_DATA
+    database: HEALTHCARE_RAW
+    schema: RAW_DATA
+    tables:
+      - name: ALLERGIES
+      - name: careplans
+      - name: claims
+      - name: claims_transactions
+      - name: conditions
+      - name: devices
+      - name: encounters
+      - name: imaging_studies
+      - name: immunizations
+      - name: medications
+      - name: observations
+      - name: organizations
+      - name: patients
+      - name: payer_transitions
+      - name: payers
+      - name: procedures
+      - name: providers
+      - name: supplies
