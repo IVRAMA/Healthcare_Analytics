@@ -1,4 +1,9 @@
-create or replace schema EXTERNAL_STAGES;
+-- 02_External_stages.sql
+USE ROLE TRANSFORM;
+USE WAREHOUSE TRANSFORMING;
+USE DATABASE HEALTHCARE_RAW;
+
+CREATE OR REPLACE SCHEMA EXTERNAL_STAGES;
 
 CREATE OR REPLACE stage healthcare_raw.external_stages.stage_allergies  FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);
 CREATE OR REPLACE stage healthcare_raw.external_stages.stage_careplans  FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY = '"' SKIP_HEADER = 1);

@@ -1,5 +1,10 @@
-create or replace schema RAW_DATA;
-use schema RAW_DATA; 
+-- 03_raw_table_definitions.sql
+USE ROLE TRANSFORM;
+USE WAREHOUSE TRANSFORMING;
+USE DATABASE HEALTHCARE_RAW;
+USE SCHEMA RAW_DATA;
+
+-- tables creation scripts
 create or replace TABLE ALLERGIES (
 	"START" VARCHAR(16777216),
 	STOP VARCHAR(16777216),
