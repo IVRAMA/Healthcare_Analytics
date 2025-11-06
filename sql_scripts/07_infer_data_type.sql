@@ -37,7 +37,6 @@ SELECT
         THEN 'BOOLEAN'
 
         ELSE 'VARCHAR'
-    END AS inferred_datatype, 
-    data1, data2,data3
+    END AS inferred_datatype
 FROM healthcare_raw.raw_data.table_column_preview;
 
