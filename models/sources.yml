@@ -1,11 +1,11 @@
 version: 2
 
 sources:
-  - name: RAW_DATA
-    database: HEALTHCARE_RAW
-    schema: RAW_DATA
+  - name: raw_data
+    database: healthcare_raw
+    schema: raw_data
     tables:
-      - name: ALLERGIES
+      - name: allergies
       - name: careplans
       - name: claims
       - name: claims_transactions
