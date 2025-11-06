@@ -1,3 +1,8 @@
+-- 07_infer_data_type.sql
+USE ROLE TRANSFORM;
+USE WAREHOUSE TRANSFORMING;
+USE DATABASE HEALTHCARE_RAW;
+
 SELECT
     table_name,
     column_name,
