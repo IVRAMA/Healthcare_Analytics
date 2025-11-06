@@ -2,7 +2,10 @@
 USE ROLE TRANSFORM;
 USE WAREHOUSE TRANSFORMING;
 USE DATABASE HEALTHCARE_RAW;
+USE SCHEMA UTIL;
 
+
+CREATE OR REPLACE TABLE INFERRED_COLUMN_TYPES AS 
 SELECT
     table_name,
     column_name,
@@ -37,3 +40,4 @@ SELECT
     END AS inferred_datatype, 
     data1, data2,data3
 FROM healthcare_raw.raw_data.table_column_preview;
+
