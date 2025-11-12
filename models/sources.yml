@@ -1,9 +1,10 @@
 version: 2
 
+s17:26:19 version: 2
+
 sources:
   - name: raw_data
     database: healthcare_raw
-    schema: raw_data
     tables:
       - name: allergies
       - name: careplans
@@ -23,3 +24,4 @@ sources:
       - name: procedures
       - name: providers
       - name: supplies
+      - name: table_column_preview

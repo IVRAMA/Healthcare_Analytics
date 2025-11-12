@@ -37,3 +37,5 @@ COPY INTO healthcare_raw.raw_data.procedures FROM @healthcare_raw.external_stage
 COPY INTO healthcare_raw.raw_data.providers FROM @healthcare_raw.external_stages.stage_providers ON_ERROR = 'CONTINUE';
 
 COPY INTO healthcare_raw.raw_data.supplies FROM @healthcare_raw.external_stages.stage_supplies ON_ERROR = 'CONTINUE';
+
+SELECT TABLE_NAME , FILE_NAME , ROW_PARSED , ROW_COUNT , ERROR_COUNT , LAST_LOAD_TIME FROM INFORMATION_SCHEMA.LOAD_HISTORY WHERE SCHEMA_NAME = 'RAW_DATA' ORDER BY LAST_LOAD_TIME;
