@@ -1,1 +1,46 @@
+version: 2
 
+models:
+
+  - name: stg_raw_data_allergies
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_careplans
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_claims
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field
