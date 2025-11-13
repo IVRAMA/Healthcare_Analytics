@@ -43,4 +43,199 @@ models:
           - not_null
           - relationships:
               to: ref('stg_raw_data_patients')
-              field
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+      - name: provider
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_providers')
+              field: id
+
+  - name: stg_raw_data_claimstransactions
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: claimid
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_claims')
+              field: id
+
+  - name: stg_raw_data_conditions
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_imaging
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_immunizations
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_medications
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_observations
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_patients
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_raw_data_procedures
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_providers
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_raw_data_payer_transitions
+    columns:
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+
+  - name: stg_raw_data_encounters
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: patient
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: provider
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_providers')
+              field: id
+
+  - name: stg_raw_data_careplanactivities
+    columns:
+      - name: careplanid
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_careplans')
+              field: id
+
+  - name: stg_raw_data_organizations
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_raw_data_devices
+    columns:
+      - name: patient
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
+
+  - name: stg_raw_data_supplies
+    columns:
+      - name: patient
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_patients')
+              field: id
+      - name: encounter
+        tests:
+          - relationships:
+              to: ref('stg_raw_data_encounters')
+              field: id
