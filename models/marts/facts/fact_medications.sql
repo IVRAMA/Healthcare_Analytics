@@ -10,6 +10,10 @@ select
     , "PAYER_COVERAGE" as payer_coverage
     , "DISPENSES" as DISPENSES
     , "TOTALCOST" as TOTALCOST
+    , code as medication_code
+    , "DESCRIPTION" medication_description
+    , REASONCODE
+    , REASONDESCRIPTION
 from {{ ref('stg_raw_data__medications') }}
 
 
