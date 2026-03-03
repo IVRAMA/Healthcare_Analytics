@@ -1,0 +1,27 @@
+{{ config(materialized='table') }}
+
+select
+"ID"
+    , "BIRTHDATE"
+    , "DEATHDATE"
+    , "SSN"
+    , "DRIVERS"
+    , "PASSPORT"
+    , "PREFIX"
+    , "FIRST"
+    , "LAST"
+    , "SUFFIX"
+    , "MAIDEN"
+    , "MARITAL"
+    , "RACE"
+    , "ETHNICITY"
+    , "GENDER"
+    , "BIRTHPLACE"
+    , "ADDRESS"
+    , "CITY"
+    , "STATE"
+    , "COUNTY"
+    , "ZIP"
+    , "HEALTHCARE_EXPENSES"
+    , "HEALTHCARE_COVERAGE"
+from {{ ref('stg_raw_data__patients') }}
